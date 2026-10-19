@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs
+*.log
+
+# Environment variables & secrets (none should ever be stored)
+.env
+.env.*
+*.pem
+*.key
+
+# Test coverage & scanner outputs
+coverage/
+.scannerwork/
+.sonar/
+
+# OS / Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

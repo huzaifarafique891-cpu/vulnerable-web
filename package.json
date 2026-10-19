@@ -1,0 +1,28 @@
+{
+  "name": "cloudsentinel-vulnerable-demo",
+  "version": "1.0.0",
+  "description": "CloudSentinel Vulnerable Demo Application for controlled SAST security gate testing",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "node --test tests/app.test.js"
+  },
+  "keywords": [
+    "cloudsentinel",
+    "devsecops",
+    "sast",
+    "vulnerability-testing",
+    "security-gate"
+  ],
+  "author": "CloudSentinel Security Team",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

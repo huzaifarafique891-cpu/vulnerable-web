@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cloudsentinel-vulnerable-demo
+  labels:
+    app.kubernetes.io/name: cloudsentinel-vulnerable-demo
+    app.kubernetes.io/part-of: cloudsentinel-platform
+    environment: devsecops-demo
+    security-gate: vulnerable-blocked

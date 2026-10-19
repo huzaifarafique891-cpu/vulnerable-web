@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudSentinel — Vulnerable Demo Application</title>
+  <meta name="description" content="CloudSentinel Vulnerable Demo Application for controlled SAST security gate testing and automated deployment blocking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="background-glow glow-red"></div>
+  <div class="background-glow glow-purple"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="main-nav">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-shield blocked">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <line x1="15" y1="9" x2="9" y2="15"></line>
+            <line x1="9" y1="9" x2="15" y2="15"></line>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">CloudSentinel</span>
+          <span class="brand-badge">DevSecOps Academic Lab</span>
+        </div>
+      </div>
+      <div class="gate-pill blocked" id="gate-pill">
+        <span class="status-dot pulsating"></span>
+        <span class="status-label">SECURITY GATE: BLOCKED</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="content-container">
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero-section">
+      <div class="academic-badge">Academic DevSecOps Verification — Project B</div>
+      <h1 class="hero-title" id="main-title">CloudSentinel — Vulnerable Demo Application</h1>
+      
+      <!-- Exact Message Requirement -->
+      <div class="critical-gate-banner" id="gate-banner">
+        <div class="banner-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+          </svg>
+        </div>
+        <div class="banner-body">
+          <div class="banner-subtitle">GATE POLICY ENFORCEMENT</div>
+          <div class="banner-heading" id="exact-gate-msg">Security Gate Demonstration — Deployment Must Be Blocked</div>
+        </div>
+      </div>
+
+      <!-- Exact Warning Requirement -->
+      <div class="warning-callout" id="warning-banner">
+        <div class="warning-icon">⚠️</div>
+        <div class="warning-text" id="exact-warning-msg">
+          This application intentionally contains a security-rule violation for controlled SAST testing.
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual DevSecOps Pipeline Flow -->
+    <section class="pipeline-section" id="pipeline-section">
+      <h2 class="section-title">Automated Security Gate Pipeline Flow</h2>
+      <div class="pipeline-flow">
+        <div class="pipeline-step step-success">
+          <div class="step-icon">📦</div>
+          <div class="step-info">
+            <div class="step-num">STEP 1</div>
+            <div class="step-name">GitHub Push</div>
+            <div class="step-desc">Code commit pushed</div>
+          </div>
+          <div class="step-status tag-pass">PASSED</div>
+        </div>
+
+        <div class="pipeline-connector connector-pass"></div>
+
+        <div class="pipeline-step step-success">
+          <div class="step-icon">⚡</div>
+          <div class="step-info">
+            <div class="step-num">STEP 2</div>
+            <div class="step-name">CloudSentinel</div>
+            <div class="step-desc">Webhook dispatch</div>
+          </div>
+          <div class="step-status tag-pass">TRIGGERED</div>
+        </div>
+
+        <div class="pipeline-connector connector-pass"></div>
+
+        <div class="pipeline-step step-fail">
+          <div class="step-icon">🔍</div>
+          <div class="step-info">
+            <div class="step-num">STEP 3</div>
+            <div class="step-name">SAST Scan</div>
+            <div class="step-desc">SonarQube javascript:S4790</div>
+          </div>
+          <div class="step-status tag-fail">VIOLATION FOUND</div>
+        </div>
+
+        <div class="pipeline-connector connector-fail"></div>
+
+        <div class="pipeline-step step-blocked">
+          <div class="step-icon">🛡️</div>
+          <div class="step-info">
+            <div class="step-num">STEP 4</div>
+            <div class="step-name">Security Gate</div>
+            <div class="step-desc">Thresholds breached</div>
+          </div>
+          <div class="step-status tag-blocked">BLOCKED</div>
+        </div>
+
+        <div class="pipeline-connector connector-abort"></div>
+
+        <div class="pipeline-step step-aborted">
+          <div class="step-icon">🛑</div>
+          <div class="step-info">
+            <div class="step-num">STEP 5</div>
+            <div class="step-name">K8s Deployment</div>
+            <div class="step-desc">Promotion denied</div>
+          </div>
+          <div class="step-status tag-abort">ABORTED</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Vulnerability Details Card -->
+    <section class="details-grid" id="details-section">
+      <div class="card detail-card">
+        <div class="card-header">
+          <div class="card-title-wrap">
+            <span class="icon-tag red">CVE / CWE</span>
+            <h3>Intentional Vulnerability Profile</h3>
+          </div>
+          <span class="badge badge-critical">SEV: CRITICAL / HIGH</span>
+        </div>
+        <div class="card-body">
+          <p class="card-intro">
+            To demonstrate security gate enforcement without endangering infrastructure or handling real sensitive data, this project introduces exactly one isolated, harmless cryptographic violation.
+          </p>
+
+          <div class="spec-list">
+            <div class="spec-item">
+              <span class="spec-label">SonarQube Rule:</span>
+              <span class="spec-value mono highlight-red">javascript:S4790</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Rule Title:</span>
+              <span class="spec-value">Weak hashing algorithms should not be used</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Vulnerable File:</span>
+              <span class="spec-value mono">src/insecure-demo.js (Line 39)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Insecure Pattern:</span>
+              <span class="spec-value mono">crypto.createHash('md5')</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Data Scope:</span>
+              <span class="spec-value">Fixed public test constant (NO passwords / tokens)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Classification:</span>
+              <span class="spec-value">CWE-327, CWE-328 | OWASP A02:2021</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gate Policy Rule:</span>
+              <span class="spec-value highlight-red">Zero Critical Vulnerabilities Allowed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Functional Testing vs Security Gate Comparison -->
+      <div class="card detail-card">
+        <div class="card-header">
+          <div class="card-title-wrap">
+            <span class="icon-tag yellow">QA vs SEC</span>
+            <h3>Functional Tests vs. Security Assurance</h3>
+          </div>
+          <span class="badge badge-neutral">DevSecOps Principle</span>
+        </div>
+        <div class="card-body">
+          <p class="card-intro">
+            A key academic DevSecOps lesson: functional correctness does not equal security correctness.
+          </p>
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Validation Dimension</th>
+                  <th>Functional Test Suite</th>
+                  <th>CloudSentinel SAST Gate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Target Focus</td>
+                  <td>HTTP 200, Routes, Up-time</td>
+                  <td>CWEs, AST patterns, Crypto</td>
+                </tr>
+                <tr>
+                  <td>Current Result</td>
+                  <td><span class="status-chip pass">10 / 10 PASS</span></td>
+                  <td><span class="status-chip fail">BLOCKED</span></td>
+                </tr>
+                <tr>
+                  <td>Deployment Authority</td>
+                  <td>No deployment veto</td>
+                  <td>Hard gating authority</td>
+                </tr>
+                <tr>
+                  <td>Significance</td>
+                  <td>App works for users</td>
+                  <td>Protects cluster & supply chain</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="principle-note">
+            <strong>Key Takeaway:</strong> Unit & functional tests pass completely, yet deployment is strictly prohibited because the automated security gate intercepted the weak cryptographic primitive.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Live Endpoint Tester -->
+    <section class="tester-section" id="tester-section">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-wrap">
+            <span class="icon-tag blue">API</span>
+            <h3>Interactive Endpoint Verification</h3>
+          </div>
+          <span class="badge badge-neutral">Operational Testbed</span>
+        </div>
+        <div class="card-body">
+          <p class="card-intro">
+            Verify functional readiness and retrieve real-time vulnerability descriptors directly from the running Express server.
+          </p>
+          <div class="endpoint-button-bar">
+            <button class="btn btn-primary" id="btn-test-health" onclick="testEndpoint('/health')">
+              <span class="btn-method">GET</span> /health
+            </button>
+            <button class="btn btn-secondary" id="btn-test-info" onclick="testEndpoint('/api/info')">
+              <span class="btn-method">GET</span> /api/info
+            </button>
+            <button class="btn btn-warning" id="btn-test-violation" onclick="testEndpoint('/api/demo/violation')">
+              <span class="btn-method">GET</span> /api/demo/violation
+            </button>
+          </div>
+
+          <div class="response-viewer" id="response-viewer">
+            <div class="viewer-header">
+              <span class="viewer-endpoint" id="display-endpoint">Select an endpoint to test...</span>
+              <span class="viewer-status" id="display-status">READY</span>
+            </div>
+            <pre class="viewer-code" id="display-code"><code>// Click any button above to execute a live HTTP request to the running application.</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <strong>CloudSentinel DevSecOps Pipeline Verification</strong>
+        <span>Project B: Intentionally Insecure Demonstration Application</span>
+      </div>
+      <div class="footer-right">
+        <span>Controlled Academic Testing Only &bull; Strict Deployment Block Enforced</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    async function testEndpoint(endpoint) {
+      const displayEndpoint = document.getElementById('display-endpoint');
+      const displayStatus = document.getElementById('display-status');
+      const displayCode = document.getElementById('display-code');
+
+      displayEndpoint.textContent = `GET ${endpoint}`;
+      displayStatus.textContent = 'FETCHING...';
+      displayStatus.className = 'viewer-status';
+
+      try {
+        const startTime = performance.now();
+        const response = await fetch(endpoint);
+        const data = await response.json();
+        const elapsed = (performance.now() - startTime).toFixed(1);
+
+        displayStatus.textContent = `HTTP ${response.status} OK (${elapsed}ms)`;
+        displayStatus.className = response.ok ? 'viewer-status status-success' : 'viewer-status status-error';
+        displayCode.innerHTML = `<code>${JSON.stringify(data, null, 2)}</code>`;
+      } catch (err) {
+        displayStatus.textContent = 'REQUEST FAILED';
+        displayStatus.className = 'viewer-status status-error';
+        displayCode.innerHTML = `<code>${JSON.stringify({ error: err.message, status: 'Failed to connect' }, null, 2)}</code>`;
+      }
+    }
+  </script>
+</body>
+</html>

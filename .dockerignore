@@ -1,0 +1,29 @@
+# Git repository
+.git
+.gitignore
+
+# Dependencies (will be cleanly installed inside container via npm ci)
+node_modules/
+
+# Automated tests & test artifacts
+tests/
+coverage/
+
+# Kubernetes manifests
+k8s/
+
+# Documentation & metadata
+README.md
+.scannerwork/
+.sonar/
+
+# Logs & temp files
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Secrets & environment files (ensure zero accidental leaks)
+.env*
+*.pem
+*.key
